@@ -11,10 +11,13 @@ type CreatePokemonDto {
 
 type Query {
   pokemon: [CreatePokemonDto!]!
+  getByIdPokemon(id: String!): CreatePokemonDto!
 }
 
 type Mutation {
   createPokemon(data: inputPokemon!): CreatePokemonDto!
+  updatePokemon(input: inputPokemon!, id: String!): CreatePokemonDto!
+  deletePokemon(id: String!): CreatePokemonDto!
 }
 
 input inputPokemon {
